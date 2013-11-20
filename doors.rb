@@ -12,12 +12,8 @@ class Door
   end
 end
 
-@doors = []
-
 num = ARGV.first.nil? ? 100 : ARGV.first.to_i
-num.times do
-  @doors << Door.new
-end
+@doors = Array.new(num) { Door.new }
 
 arr = 1.upto(@doors.count).to_a
 arr.each do |n|
